@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+	<title>Canvas</title>
+	<link rel="stylesheet" type="text/css" href="bildbearbeitung.css">
+	<meta charset="utf-8"/>
+</head>
+
+
+<body>
+
+<div id="toolbar">
+	<h1>Werkzeuge</h1>
+	</p>
+	<div class="fileUpload btn btn-primary"><br>
+		<span id="loadup"> Neues Bild Hochladen</span>
+		<input type="file" class="upload" id="imageLoader" name="imageLoader" width="img.width" height="img.height"/>
+	</div>
+
+	<input class="button" id="grayscalebtn" type="button" value="Graustufen" title="Graustufen" alt="Graustufen">
+	<input class="button" id="negativebtn" type="button" value="Negativ" title="Negativ" alt="Negativ">
+	</p>
+	<input class="button" id="flipHbtn" type="button" value="Horizontale&#10Spiegelung"
+	       title="Horizontale Spiegelung" alt="Horizontale Spiegelung">
+	<input class="button" id="flipVbtn" type="button" value="Vertikale&#10Spiegelung" title="Vertikale Spiegelung"
+	       alt="Vertikale Spiegelung">
+	</p>
+	<input class="button" id="doubleImgbtn" type="button" value="Verdoppeln" title="Verdoppeln" alt="Verdoppeln">
+	<input class="button" id="halveImgbtn" type="button" value="Halbieren" title="Halbieren" alt="Halbieren">
+	</p>
+	<input class="button" id="rotateRbtn" type="button" value="Rechtsdrehung" title="Rechtsdrehung"
+	       alt="Rechtsdrehung">
+	<input class="button" id="rotateLbtn" type="button" value="Linksdrehung" title="Linksdrehung"
+	       alt="Linksdrehung">
+	</p>
+	<input class="button" id="edgesbtn" type="button" value="Kanten">
+	<input class="button" id="supressbtn" type="button" value="Rauschfilter">
+	</p>
+	<div id=range>
+		<table id="sliders">
+			<tr>
+				<td><img class="image" src="icons/icon_contrast.png" width="35px" height="35px"></td>
+				<td>Kontrast</td>
+				<td><input class="range" id="contrastrng" type="range" min="-255" max="255" value="0"></input></td>
+			</tr>
+			<tr>
+				<td><img class="image" src="icons/1119.png" width="35px" height="35px"></td>
+				<td> Helligkeit</td>
+				<td><input class="range" id="brightnessrng" type="range" min="-255" max="255" value="0"></input>
+				</td>
+			</tr>
+			<tr>
+				<td><img class="image" src="icons/blackpng.png" width="35px" height="35px"></td>
+				<td> Schwarz/Wei&szlig</td>
+				<td><input class="range" id="blackwhiterng" type="range" min="-255" max="255" value="0"></input>
+				</td>
+			</tr>
+			<tr>
+				<td><img class="image" src="icons/red.png" width="35px" height="35px"></td>
+				<td> Rot</td>
+				<td><input class="range" id="redRng" type="range" min="-127" max="127" value="0"></input></td>
+			</tr>
+			<tr>
+				<td><img class="image" src="icons/green.png" width="35px" height="35px"></td>
+				<td>Gr&uumln</td>
+				<td><input class="range" id="greenRng" type="range" min="-127" max="127" value="0"></input></td>
+			</tr>
+			<tr>
+				<td><img class="image" src="icons/blue.png" width="35px" height="35px"></td>
+				<td> Blau</td>
+				<td><input class="range" id="blueRng" type="range" min="-127" max="127" value="0"></input></td>
+			</tr>
+		</table>
+		<input type="button" id="clearbtn" value="Reset">
+		</p>
+	</div>
+</div>
+
+<canvas id="imageCanvas" width="img.width" height="img.height"></canvas>
+<br><br>
+
+<script src="bildbearbeitung.js">
+	draw();
+	handleImage();
+</script>
+
+</body>
+
+</html>
